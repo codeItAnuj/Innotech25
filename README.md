@@ -1,0 +1,2 @@
+This is the project for my college annual tech fest.
+It is plateform that gives roadmap of career you want to start after class 12th or 10th.This is especially for rural areas students as they do'nt know about various domains of careers.
