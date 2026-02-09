@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Prdiction for Career</title>
+    <link rel="stylesheet" href="aipredictor.css">
+</head>
+    <body>
+        <div id="topright">
+            <a href="main.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contactus.html">Contacts</a>
+        </div>
+        <div id="topleft">
+            <a href="main.html"><img src="logo1.png" alt="" height="60px" width="60px"></a>
+        </div>
+        <hr>
+        <header>🎯 Career Guidance Test (For Class 10 Students)</header>
+        <form id="careerForm">
+            <section>
+                <h2>Section 1: Academic Inclination</h2>
+                <label>Which subject do you enjoy studying the most?</label>
+                <select id="q1" required>
+                    <option value="">Select...</option>
+                    <option value="science">Math</option>
+                    <option value="science">Science (Physics/Chemistry/Biology)</option>
+                    <option value="arts">Social Studies</option>
+                    <option value="arts">English/Languages</option>
+                    <option value="science">Computer/IT</option>
+                </select>
+                <label>Do you like learning about how people, societies, or economies function?</label>
+                <select id="q2" required>
+                    <option value="">Select...</option>
+                    <option value="yes_arts">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </section>
+            <section>
+                <h2>Section 2: Skills & Aptitude</h2>
+                <label>Are you more logical and analytical, or imaginative and creative?</label>
+                <select id="q3" required>
+                    <option value="">Select...</option>
+                    <option value="science">Logical & Analytical</option>
+                    <option value="arts">Imaginative & Creative</option>
+                </select>
+                <label>Do you enjoy experimenting, building, or inventing things?</label>
+                <select id="q4" required>
+                    <option value="">Select...</option>
+                    <option value="science">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </section>
+            <section>
+                <h2>Section 3: Personality & Interests</h2>
+                <label>What excites you more?</label>
+                <select id="q5" required>
+                    <option value="">Select...</option>
+                    <option value="science">Solving a tough problem</option>
+                    <option value="arts">Creating or designing something new</option>
+                    <option value="commerce">Managing or leading a group</option>
+                    <option value="arts">Performing or competing</option>
+                </select>
+            </section>
+            <section>
+                <h2>Section 4: Non-Academic Interests</h2>
+                <label>Are you interested in music, art, dance, theatre, or content creation?</label>
+                <select id="q6" required>
+                    <option value="">Select...</option>
+                    <option value="arts">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label>Have you ever tried making or selling something (entrepreneurial mindset)?</label>
+                <select id="q7" required>
+                    <option value="">Select...</option>
+                    <option value="commerce">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Section 5: Future Goals & Values</h2>
+                <label>What kind of life do you imagine in 10 years?</label>
+                <select id="q8" required>
+                    <option value="">Select...</option>
+                    <option value="science">Corporate / Technical</option>
+                    <option value="arts">Creative</option>
+                    <option value="commerce">Business</option>
+                    <option value="arts">Social</option>
+                </select>
+            </section>
+
+            <button type="submit">Show My Career Path</button>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.getElementById("careerForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const answers = [
+                    document.getElementById("q1").value,
+                    document.getElementById("q2").value,
+                    document.getElementById("q3").value,
+                    document.getElementById("q4").value,
+                    document.getElementById("q5").value,
+                    document.getElementById("q6").value,
+                    document.getElementById("q7").value,
+                    document.getElementById("q8").value
+                ];
+
+                let score = { science: 0, commerce: 0, arts: 0 };
+
+                answers.forEach(ans => {
+                    if (ans.includes("science")) score.science++;
+                    if (ans.includes("commerce")) score.commerce++;
+                    if (ans.includes("arts")) score.arts++;
+                });
+
+                let highest = Object.keys(score).reduce((a, b) => score[a] > score[b] ? a : b);
+
+                let resultText = "";
+                if (highest === "science") {
+                    resultText = "🔬 You show strong analytical and problem-solving skills. You’re best suited for the <b>Science Stream</b> — Engineering, Medical, or Research careers could be ideal!";
+                } else if (highest === "commerce") {
+                    resultText = "💼 You have a business mindset and leadership tendencies. You’re best suited for the <b>Commerce Stream</b> — consider Finance, Management, or Entrepreneurship.";
+                } else if (highest === "arts") {
+                    resultText = "🎨 You’re imaginative, expressive, and people-oriented. You’re best suited for the <b>Arts/Humanities Stream</b> — perfect for Design, Media, Psychology, or Law.";
+                } else {
+                    resultText = "🤔 Your interests are diverse! Explore all streams — take a career aptitude test or counseling for deeper insights.";
+                }
+
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `<strong>Result:</strong><br>${resultText}`;
+                resultDiv.style.display = "block";
+                window.scrollTo({ top: resultDiv.offsetTop, behavior: 'smooth' });
+            });
+        </script>
+    </body>
+
+</html>
+</main>
+<hr>
+    <div class="footer" style="background-color: blueviolet;">
+        <p>Copyright © 2025| Career to Connect| All rights reserved</p>
+    </div>
+</body>
+
+</html>

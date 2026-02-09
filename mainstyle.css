@@ -1,0 +1,61 @@
+html{
+    font-style:inherit;
+}
+#topright{
+    display: flexbox;
+    padding-right:100px;
+    background-color:white;
+    display:flex;
+    gap:100px;
+    float:inline-end;
+}
+#mainpage{
+    background-image: url('backgrnd.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    height:50%;
+    width: 100%;
+}
+.academiccareer{
+     display: grid;
+     grid-template-columns: auto auto auto auto;
+     gap: 10px;
+}
+.sportscareer{
+     display: grid;
+     grid-template-columns: auto auto auto auto;
+     gap: 10px;
+}
+.extracircular{
+    margin-left:30px;
+    margin-bottom:30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+#cw{
+    position: relative;
+}
+#ec3{
+    position: absolute;
+    align-items: center;
+    left: 50px;
+}
+#gd{
+    position: relative;
+}
+#ec3{
+    position: absolute;
+    align-items: center;
+    left: 50px;
+}
+#pr{
+    position: relative;
+}
+#ec3{
+    position: absolute;
+    align-items: center;
+    left: 50px;
+}
